@@ -1,0 +1,214 @@
+<title>Ecomm / Drop — Marcas Escaladas</title>
+<style>
+:root{
+  --bg:#0e1019;--s:#161923;--s2:#1e2231;--bd:#2a2e3d;
+  --t:#e2e2e8;--t2:#9498ad;--t3:#636780;
+  --blue:#4f8ff7;--green:#34d47e;--purple:#9b6dfa;--amber:#f0a030;--red:#f05252;--cyan:#22d3ee;
+  --blue-bg:rgba(79,143,247,.12);--green-bg:rgba(52,212,126,.10);--purple-bg:rgba(155,109,250,.10);
+  --amber-bg:rgba(240,160,48,.10);--red-bg:rgba(240,82,82,.10);--cyan-bg:rgba(34,211,238,.10);
+  --r:8px;--f:'Segoe UI',system-ui,sans-serif;--m:'Cascadia Code','Fira Code',monospace;
+}
+@media(prefers-color-scheme:light){:root:not([data-theme="dark"]){
+  --bg:#f5f6f8;--s:#fff;--s2:#eef0f4;--bd:#dde0e8;--t:#14171f;--t2:#5a5f72;--t3:#9498ad;
+}}
+:root[data-theme="light"]{--bg:#f5f6f8;--s:#fff;--s2:#eef0f4;--bd:#dde0e8;--t:#14171f;--t2:#5a5f72;--t3:#9498ad;}
+:root[data-theme="dark"]{--bg:#0e1019;--s:#161923;--s2:#1e2231;--bd:#2a2e3d;--t:#e2e2e8;--t2:#9498ad;--t3:#636780;}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--t);font-family:var(--f);line-height:1.5}
+.w{max-width:1200px;margin:0 auto;padding:20px 16px}
+.hd{margin-bottom:20px}
+.hd h1{font-size:1.25rem;font-weight:700;letter-spacing:-.02em}
+.hd .sub{color:var(--t3);font-size:.76rem;margin-top:2px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:18px}
+.st{background:var(--s);border:1px solid var(--bd);border-radius:var(--r);padding:12px 14px}
+.st .l{font-size:.65rem;text-transform:uppercase;letter-spacing:.06em;color:var(--t3);margin-bottom:2px}
+.st .v{font-size:1.4rem;font-weight:700;font-variant-numeric:tabular-nums}
+.toolbar{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap;align-items:center}
+.search{flex:1;min-width:180px;padding:8px 12px;background:var(--s);border:1px solid var(--bd);border-radius:var(--r);color:var(--t);font-size:.8rem;font-family:var(--f);outline:none}
+.search:focus{border-color:var(--blue)}
+.ch{padding:4px 12px;background:var(--s);border:1px solid var(--bd);border-radius:18px;color:var(--t2);font-size:.7rem;cursor:pointer;font-family:var(--f);transition:all .15s;white-space:nowrap}
+.ch:hover,.ch.on{border-color:var(--blue);color:var(--blue);background:var(--blue-bg)}
+.ct{color:var(--t3);font-size:.7rem;margin-left:auto;font-variant-numeric:tabular-nums}
+.tbl{overflow-x:auto;border:1px solid var(--bd);border-radius:var(--r);background:var(--s)}
+table{width:100%;border-collapse:collapse;font-size:.77rem}
+th{background:var(--s2);color:var(--t3);font-weight:600;text-transform:uppercase;font-size:.64rem;letter-spacing:.05em;padding:9px 12px;text-align:left;white-space:nowrap;cursor:pointer;user-select:none;position:sticky;top:0;z-index:1}
+th:hover{color:var(--t)}
+th .a{margin-left:3px;opacity:.3;font-size:.5rem}
+th.so .a{opacity:1;color:var(--blue)}
+td{padding:8px 12px;border-top:1px solid var(--bd)}
+tr:hover td{background:var(--s2)}
+.nm{font-weight:600;max-width:220px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.b{display:inline-block;padding:2px 7px;border-radius:4px;font-size:.62rem;font-weight:600;letter-spacing:.02em;white-space:nowrap}
+.b-blue{background:var(--blue-bg);color:var(--blue)}
+.b-green{background:var(--green-bg);color:var(--green)}
+.b-purple{background:var(--purple-bg);color:var(--purple)}
+.b-amber{background:var(--amber-bg);color:var(--amber)}
+.b-red{background:var(--red-bg);color:var(--red)}
+.b-cyan{background:var(--cyan-bg);color:var(--cyan)}
+.b-gray{background:var(--s2);color:var(--t3)}
+.mn{font-family:var(--m);font-size:.7rem}
+.url{color:var(--blue);text-decoration:none;font-size:.7rem}
+.url:hover{text-decoration:underline}
+.ig{display:inline-flex;align-items:center;gap:3px;color:var(--purple);font-weight:600;font-size:.72rem}
+@media(max-width:640px){.hd h1{font-size:1.05rem}td,th{padding:6px 8px;font-size:.7rem}.stats{grid-template-columns:1fr 1fr}}
+</style>
+
+<div class="w">
+  <div class="hd">
+    <h1>Ecomm / Drop — Marcas Escaladas</h1>
+    <div class="sub">Marcas reais com branding &middot; Shopify &middot; Meta Ad Library + Google Ads &middot; 13 Ago 2026</div>
+  </div>
+  <div class="stats" id="stats"></div>
+  <div class="toolbar">
+    <input class="search" id="q" placeholder="Buscar marca, categoria, pais..." oninput="render()">
+    <button class="ch" data-f="joias" onclick="tog(this)">Joias</button>
+    <button class="ch" data-f="oculos" onclick="tog(this)">Oculos</button>
+    <button class="ch" data-f="perfume" onclick="tog(this)">Perfume</button>
+    <button class="ch" data-f="camisa" onclick="tog(this)">Camisas</button>
+    <button class="ch" data-f="moda" onclick="tog(this)">Moda</button>
+    <button class="ch" data-f="tenis" onclick="tog(this)">Tenis</button>
+    <button class="ch" data-f="br" onclick="tog(this)">Brasil</button>
+    <span class="ct" id="ct"></span>
+  </div>
+  <div class="tbl"><table><thead id="hd2"></thead><tbody id="bd"></tbody></table></div>
+</div>
+
+<script>
+const D=[
+  // JOIAS
+  {nome:"Milano Cupertino",url:"milanocupertino.com",cat:"Joias",sub:"Prata 925 artesanal",preco:"R$200-1000+",ig:"—",conta:"Milano Cupertino",metaAds:43,escala:"Cashback 20%, frete gratis >R$400"},
+  {nome:"Key Design",url:"keydesign.com.br",cat:"Joias",sub:"Semijoias masculinas",preco:"R$50-300",ig:"324K",conta:"Key Design",metaAds:20,escala:"150K+ clientes, Caio Castro investor"},
+  {nome:"Vellario",url:"vellario.com.br",cat:"Joias",sub:"Prata 925 premium",preco:"R$150-600",ig:"—",conta:"Vellario",metaAds:21,escala:"Posicionamento luxo discreto, A/B testing"},
+  {nome:"Argennti",url:"argennti.com.br",cat:"Joias",sub:"Prata 925 M/F",preco:"R$80-400",ig:"—",conta:"Argennti + Rafael Ribeiro",metaAds:240,escala:"Influencer whitelabel, ads desde ago/2025"},
+  {nome:"Stucci",url:"stucci.com.br",cat:"Joias",sub:"Prata 925 minimalista",preco:"R$80-300",ig:"220K",conta:"Stucci Prata925",metaAds:160,escala:"Influencer whitelabel, ads desde jun/2025"},
+  {nome:"Loft Masculino",url:"loftmasculino.com.br",cat:"Joias",sub:"Pedras naturais + ouro 18k",preco:"R$100-500",ig:"172K",conta:"Loft Masculino",metaAds:26,escala:"Diamantes naturais, garantia vitalicia"},
+  {nome:"CODE Brincos",url:"codebrincosmasculinos.com.br",cat:"Joias",sub:"Brincos prata 925",preco:"R$50-200",ig:"108K",conta:"CODE Brincos",metaAds:68,escala:"Nicho brinco masculino, ads desde fev/2026"},
+  {nome:"Rei das Pratas",url:"reipratas.com.br",cat:"Joias",sub:"Correntes, pulseiras prata",preco:"R$60-400",ig:"85K",conta:"Rei Pratas",metaAds:7,escala:"85K IG, Shopify"},
+  {nome:"DUEROS",url:"dueros.com.br",cat:"Joias",sub:"Prata 925 + ouro 18k handmade",preco:"R$100-500",ig:"—",conta:"—",metaAds:0,escala:"Artesanal premium, 0 ads ativos"},
+  {nome:"Danzi (ex-Dandara)",url:"danzijoias.com.br",cat:"Joias",sub:"Charms, pulseiras prata",preco:"R$50-300",ig:"—",conta:"Danzi",metaAds:17,escala:"Rebrand de Dandara Joias, flash sales"},
+  {nome:"Filip Joias",url:"filipjoias.com.br",cat:"Joias",sub:"Semijoias banhadas ouro 18k",preco:"R$50-300",ig:"—",conta:"Filip joias",metaAds:17,escala:"90K+ pedidos, campanha Aniversario Filip"},
+
+  // OCULOS
+  {nome:"Blox",url:"useblox.com.br",cat:"Oculos",sub:"Oculos de sol fashion",preco:"R$150-350",ig:"336K",conta:"BLOX + BLOX Brazil",metaAds:40,escala:"2 contas, ads desde set/2024"},
+  {nome:"LIVO Eyetech",url:"livo.com.br",cat:"Oculos",sub:"Grau + sol, materiais italianos",preco:"R$200-500",ig:"107K",conta:"LIVO",metaAds:6,escala:"4 ads franquia + 2 consumer"},
+  {nome:"Cacife Brand",url:"cacifebrand.com.br",cat:"Oculos",sub:"Oculos + relogios fashion",preco:"R$100-250",ig:"—",conta:"Cacife Brand",metaAds:77,escala:"Ads desde fev/2024 (2.5 anos!), ML+Shopee"},
+  {nome:"Ethos Loja",url:"ethosloja.com.br",cat:"Oculos",sub:"Oculos esportivos",preco:"R$100-300",ig:"—",conta:"Loja Ethos + Ethos.Of",metaAds:15,escala:"2 paginas, video-heavy"},
+
+  // PERFUME
+  {nome:"Lescent",url:"lescent.com.br",cat:"Perfume",sub:"Inspirados classicos",preco:"R$60-130",ig:"—",conta:"Lescent (6 paginas)",metaAds:2600,escala:"MEGA operacao multi-pagina, maior volume"},
+  {nome:"ADEL Perfumes",url:"useadel.com.br",cat:"Perfume",sub:"Perfumes alma de importado",preco:"R$50-150",ig:"—",conta:"ADEL Perfumes & Ambient",metaAds:95,escala:"Video-heavy, desde mai/2026"},
+  {nome:"G Perfumes",url:"gperfumes.com.br",cat:"Perfume",sub:"Contratipos acessiveis",preco:"R$27-80",ig:"270K",conta:"Gperfumes",metaAds:46,escala:"1.2M+ perfumes vendidos"},
+  {nome:"Sinta Paris",url:"sintaparis.com",cat:"Perfume",sub:"Maior catalogo contratipos BR",preco:"R$50-150",ig:"—",conta:"Sinta Paris Perfumes",metaAds:33,escala:"1500 fragancias, ads desde dez/2025"},
+  {nome:"Porto Aroma",url:"portoaroma.com.br",cat:"Perfume",sub:"Inspirados parfum",preco:"R$89-159",ig:"87K",conta:"Porto Aroma + influencers",metaAds:27,escala:"Branded content (Homem Cheiroso, Kim da Moda)"},
+  {nome:"Planeta Essencia",url:"planetaessencia.com.br",cat:"Perfume",sub:"Contratipos, mesma fixacao",preco:"R$30-120",ig:"—",conta:"planetaessencia",metaAds:6,escala:"Anti-grife, WhatsApp CTA"},
+  {nome:"Nuancielo",url:"nuancielo.com.br",cat:"Perfume",sub:"Contratipos premium",preco:"R$89-169",ig:"360K",conta:"— (so revendedores)",metaAds:0,escala:"12+ anos, 0 ads proprios, resellers anunciam"},
+  {nome:"In The Box",url:"inthebox.com.br",cat:"Perfume",sub:"Contratipos premium",preco:"R$99-189",ig:"—",conta:"— (so afiliados)",metaAds:0,escala:"0 ads proprios, influencers/afiliados anunciam"},
+  {nome:"Bortoletto",url:"loja.bortolettocosmeticos.com.br",cat:"Perfume",sub:"Inspirados + cosmeticos",preco:"R$69-149",ig:"—",conta:"— (so MLM)",metaAds:0,escala:"0 ads proprios, consultores MLM anunciam"},
+
+  // CAMISA DE TIME
+  {nome:"Golbox",url:"golbox.club",cat:"Camisa Time",sub:"Caixa misteriosa camisas",preco:"R$100-200",ig:"—",conta:"Golbox GBX",metaAds:55,escala:"Influencers (Sosia Vini Jr), 120K+ clientes"},
+  {nome:"Futebolistas",url:"futebolistas.com.br",cat:"Camisa Time",sub:"Camisas retro + atuais",preco:"R$150-300",ig:"—",conta:"Futebolistas",metaAds:17,escala:"Pague 2 Leve 3, app proprio"},
+  {nome:"MG Camisas",url:"mgcamisashop.com.br",cat:"Camisa Time",sub:"Replicas futebol",preco:"R$79-149",ig:"—",conta:"MG Camisas Futebol",metaAds:0,escala:"Maior loja replica BR, 0 ads ativos"},
+  {nome:"Loja do Capita",url:"lojadocapita.com.br",cat:"Camisa Time",sub:"Camisas de time",preco:"R$79-200",ig:"—",conta:"Loja do Capita",metaAds:0,escala:"Presenca TikTok, 0 ads Meta"},
+
+  // MODA
+  {nome:"Minimal Club",url:"minimalclub.com.br",cat:"Moda",sub:"Basicos masculinos",preco:"R$79-249",ig:"572K",conta:"Minimal Club (3 paginas)",metaAds:100,escala:"UGC creators, Copa 2026, mega advertiser"},
+  {nome:"Fiezzo",url:"fiezzo.com",cat:"Moda",sub:"Sapatenis + acessorios vintage",preco:"R$50-200",ig:"—",conta:"Loja Fiezzo / Use Fiezzo",metaAds:72,escala:"Ads desde jul/2024 (2+ anos!)"},
+  {nome:"Basico.com",url:"basico.com",cat:"Moda",sub:"Essentials / camisetas",preco:"R$69-199",ig:"—",conta:"basico.com",metaAds:0,escala:"Desde 2013, pioneiro DTC, 283K FB, 0 ads"},
+
+  // TENIS
+  {nome:"Innovare Sneakers",url:"innovaresneakers.com",cat:"Tenis",sub:"Tenis importados",preco:"R$200-800",ig:"92K",conta:"Innovare sneakers brasil",metaAds:8,escala:"Ads novos ago/2026, New Balance 9060"},
+  {nome:"Espaco Tenis",url:"espacotenis.com.br",cat:"Tenis",sub:"Sneakers importados",preco:"R$150-600",ig:"117K",conta:"Espaco Tenis",metaAds:7,escala:"Converse, Puma, Nike, Adidas, 20-30% off"},
+  {nome:"Fox Calcados",url:"foxcalcados.com.br",cat:"Tenis",sub:"Atacado tenis + dropshipping",preco:"R$80-300",ig:"—",conta:"—",metaAds:0,escala:"0 ads Meta, foco atacado"},
+
+  // GADGETS
+  {nome:"BePro",url:"usebepro.com.br",cat:"Gadgets",sub:"Capas e peliculas iPhone",preco:"R$30-120",ig:"—",conta:"BePro",metaAds:0,escala:"25K FB likes, 0 ads ativos"}
+];
+
+const CATS={Joias:'blue',Oculos:'cyan',Perfume:'purple',['Camisa Time']:'green',Moda:'amber',Tenis:'red',Gadgets:'cyan'};
+const COLS=[
+  {k:'nome',l:'Marca',w:'160px'},
+  {k:'cat',l:'Cat',w:'90px'},
+  {k:'conta',l:'Conta Meta',w:'180px'},
+  {k:'metaAds',l:'Ads',w:'60px'},
+  {k:'sub',l:'Produto',w:'160px'},
+  {k:'preco',l:'Preco',w:'100px'},
+  {k:'ig',l:'IG',w:'70px'},
+  {k:'escala',l:'Destaque',w:'250px'}
+];
+
+let sortK='ig_n',sortD=-1;
+const F={};
+
+function igNum(s){if(!s||s==='—')return 0;const m=s.match(/([\d.]+)\s*(M|K)?/i);if(!m)return 0;let n=parseFloat(m[1]);if(m[2]==='M'||m[2]==='m')n*=1000000;else if(m[2]==='K'||m[2]==='k')n*=1000;return n;}
+D.forEach(d=>d.ig_n=igNum(d.ig));
+
+const stats=document.getElementById('stats');
+const cats=Object.keys(CATS);
+stats.innerHTML=`
+  <div class="st"><div class="l">Total Marcas</div><div class="v" style="color:var(--blue)">${D.length}</div></div>
+  ${cats.map(c=>`<div class="st"><div class="l">${c}</div><div class="v" style="color:var(--${CATS[c]})">${D.filter(d=>d.cat===c).length}</div></div>`).join('')}
+`;
+
+function head(){
+  document.getElementById('hd2').innerHTML='<tr>'+COLS.map(c=>{
+    const sk=c.k==='ig'?'ig_n':c.k;
+    const on=sortK===sk;
+    const a=on?(sortD===1?'&#9650;':'&#9660;'):'&#9650;';
+    return `<th style="min-width:${c.w}" class="${on?'so':''}" onclick="srt('${sk}')">${c.l}<span class="a">${a}</span></th>`;
+  }).join('')+'</tr>';
+}
+
+function catBadge(c){return `<span class="b b-${CATS[c]||'gray'}">${c}</span>`;}
+
+function render(){
+  const q=(document.getElementById('q').value||'').toLowerCase();
+  let rows=[...D];
+  if(q) rows=rows.filter(r=>Object.values(r).some(v=>String(v).toLowerCase().includes(q)));
+  if(F.joias)rows=rows.filter(r=>r.cat==='Joias');
+  if(F.oculos)rows=rows.filter(r=>r.cat==='Oculos');
+  if(F.perfume)rows=rows.filter(r=>r.cat==='Perfume');
+  if(F.camisa)rows=rows.filter(r=>r.cat==='Camisa Time');
+  if(F.moda)rows=rows.filter(r=>r.cat==='Moda');
+  if(F.tenis)rows=rows.filter(r=>r.cat==='Tenis');
+  if(F.br)rows=rows.filter(r=>true);
+
+  rows.sort((a,b)=>{
+    let va=a[sortK],vb=b[sortK];
+    if(va==null||va==='—')va=sortK==='ig_n'||sortK==='metaAds'?-1:'';
+    if(vb==null||vb==='—')vb=sortK==='ig_n'||sortK==='metaAds'?-1:'';
+    if(typeof va==='number'&&typeof vb==='number')return(va-vb)*sortD;
+    return String(va).localeCompare(String(vb))*sortD;
+  });
+
+  document.getElementById('ct').textContent=rows.length+' marcas';
+  document.getElementById('bd').innerHTML=rows.map(r=>{
+    const igDisp=r.ig&&r.ig!=='—'?`<span class="ig">${r.ig}</span>`:'<span style="color:var(--t3)">—</span>';
+    const adsDisp=r.metaAds?`<span class="mn" style="color:${r.metaAds>=100?'var(--green)':r.metaAds>=30?'var(--blue)':'var(--t2)'};font-weight:${r.metaAds>=50?'700':'400'}">${r.metaAds.toLocaleString()}</span>`:'<span style="color:var(--t3)">0</span>';
+    const contaDisp=r.conta&&r.conta!=='—'?r.conta:'<span style="color:var(--t3)">—</span>';
+    const nomeLink=r.url&&r.url!=='—'&&!r.url.startsWith('instagram')?`<a href="https://${r.url}" class="url" target="_blank">${r.nome}</a>`:r.nome;
+    return `<tr>
+      <td class="nm" title="${r.nome}">${nomeLink}</td>
+      <td>${catBadge(r.cat)}</td>
+      <td style="font-size:.7rem;color:var(--t2);max-width:180px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.conta||''}">${contaDisp}</td>
+      <td>${adsDisp}</td>
+      <td style="font-size:.73rem;color:var(--t2)">${r.sub}</td>
+      <td class="mn">${r.preco}</td>
+      <td>${igDisp}</td>
+      <td style="font-size:.7rem;max-width:250px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap" title="${r.escala}">${r.escala}</td>
+    </tr>`;
+  }).join('');
+}
+
+function srt(k){if(sortK===k)sortD*=-1;else{sortK=k;sortD=(k==='ig_n'||k==='metaAds')?-1:1;}head();render();}
+function tog(el){
+  const wasOn=el.classList.contains('on');
+  const group=['joias','oculos','perfume','camisa','moda','tenis'];
+  const isGroup=group.includes(el.dataset.f);
+  if(isGroup)document.querySelectorAll('.ch').forEach(c=>{if(group.includes(c.dataset.f)){c.classList.remove('on');F[c.dataset.f]=false;}});
+  if(!wasOn){el.classList.add('on');F[el.dataset.f]=true;}
+  render();
+}
+
+head();render();
+</script>

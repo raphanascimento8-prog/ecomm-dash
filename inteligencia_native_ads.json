@@ -1,0 +1,130 @@
+{
+  "meta": {
+    "data": "2026-08-13",
+    "sessao": "mineracao completa Swipe Offers + bibliotecas de anuncios",
+    "dashboard": "https://claude.ai/code/artifact/3bc1708a-a3df-4430-a02e-f7014e987332"
+  },
+
+  "fontes_mineradas": {
+    "swipe_offers": {
+      "url": "app.swipeoffers.com.br",
+      "total_geral": 3298,
+      "filtros_trafego": ["Facebook", "TikTok", "YouTube", "Native Ads"],
+      "filtros_tipo": ["Infoprodutos", "Nutracêutico", "Produto Físico", "Quiz", "Low Ticket"]
+    },
+    "meta_ad_library": "facebook.com/ads/library",
+    "google_ads_transparency": "adstransparency.google.com",
+    "tiktok_ad_library": "library.tiktok.com",
+    "monsterswipe": "fora do ar (app.monsterswipe.co)"
+  },
+
+  "descoberta_plataformas_native": {
+    "resumo": "Swipe Offers agrupa como 'Nativo' generico. NAO detalha Taboola/Outbrain/NewsBreak na maioria dos casos.",
+    "campo_plataforma": "Na pagina de detalhe, mostra 'Plataforma: Nativo' para native ads e 'Plataforma: Facebook' para FB ads.",
+    "plataformas_identificadas": [
+      {
+        "oferta": "Prostlosina",
+        "plataforma": "Taboola",
+        "como_descobri": "tag 'Taboola' explicita na oferta",
+        "nicho": "próstata",
+        "idioma": "PT-BR",
+        "data": "09/02/2026"
+      },
+      {
+        "oferta": "Moundrops - EUA",
+        "plataforma": "Outbrain",
+        "como_descobri": "'(Outbrain)' no proprio nome da oferta",
+        "nicho": "emagrecimento/GLP-1",
+        "idioma": "EN",
+        "data": "12/03/2025"
+      },
+      {
+        "oferta": "GlicoFix - EUA",
+        "plataforma": "Outbrain",
+        "como_descobri": "'(Outbrain)' no proprio nome da oferta",
+        "nicho": "diabetes",
+        "idioma": "EN",
+        "data": "12/03/2025"
+      }
+    ],
+    "newsbreak": "nenhuma oferta identificada",
+    "para_mapear_especifico": "MonsterSwipe (fora do ar) ou Anstrex"
+  },
+
+  "distribuicao_native_ads": {
+    "total": 162,
+    "por_tipo": {
+      "nutraceutico": {"qtd": 115, "pct": "71%"},
+      "produto_fisico": {"qtd": 3, "pct": "2%"},
+      "outros": {"qtd": 44, "pct": "27%", "nota": "infoprodutos, quiz, low ticket"}
+    },
+    "conclusao": "Native ads sao dominados por nutraceuticos ClickBank/BuyGoods. Ecomm puro (gadgets, fashion, pet) quase nao existe em native."
+  },
+
+  "produto_fisico_facebook": {
+    "total": 64,
+    "nota": "Essas 64 ofertas do filtro 'Produto Fisico' mostram 'Plataforma: Facebook'. NAO sao native ads.",
+    "verificados": [
+      {"oferta": "Velora (680 ADS)", "plataforma": "Facebook"},
+      {"oferta": "TheraWrap (510 ADS)", "plataforma": "Facebook"},
+      {"oferta": "Side Hustle Summit (1400 ADS)", "plataforma": "Facebook"}
+    ],
+    "guday": "REMOVIDA a pedido do usuario"
+  },
+
+  "cross_channel": {
+    "confirmados": [
+      {
+        "oferta": "Velora — GLP-1",
+        "ads_fb": 680,
+        "canais": ["Facebook (Swipe)", "Meta Ad Library (~360)", "Google Ads"],
+        "idioma": "IT",
+        "nicho": "emagrecimento/GLP-1"
+      },
+      {
+        "oferta": "TheraWrap (Kovaria)",
+        "ads_fb": 510,
+        "canais": ["Facebook (Swipe)", "Meta Ad Library (~710)"],
+        "idioma": "EN",
+        "nicho": "terapia/dispositivo red light"
+      },
+      {
+        "oferta": "Bracelets Tibetains",
+        "ads_fb": 210,
+        "canais": ["Facebook (Swipe)", "Meta Ad Library"],
+        "idioma": "FR/PT",
+        "nicho": "acessorios/esoterico"
+      },
+      {
+        "oferta": "Nuform Health",
+        "ads_fb": 230,
+        "canais": ["Facebook (Swipe)", "Meta Ad Library"],
+        "idioma": "EN",
+        "nicho": "fitness/emagrecimento"
+      }
+    ]
+  },
+
+  "gaps_oportunidades": {
+    "tiktok": "Zero presenca — nenhuma marca de native/FB encontrada no TikTok Ad Library BR",
+    "ecomm_em_native": "Quase virgem — 71% nutra, gadgets/fashion/pet nao existem em native = mar azul",
+    "meta_vs_native": "Meta tem ~15x mais volume que native. Muitas marcas rodam so no Meta."
+  },
+
+  "nichos_dominantes_native": {
+    "emagrecimento_glp1": ["MeltDrops", "Gelatina Slim", "AquaSculpt", "LipoVive", "MounjaRosa", "GLP1 MAX", "LipoGummies", "Mounjaro BR", "Moundrops"],
+    "diabetes": ["Sugarfix", "Sugar Swith", "GlicoTrin", "Glicelidina", "Glicongoya", "GlicoJax", "GlicoFix", "Insucaps", "Sugar Defender"],
+    "memoria": ["Neurovex (3 versoes)", "Brain Defender", "MemoMax pro", "Memovia", "IQBlast", "Memo Defender"],
+    "prostata": ["Prostavive", "Prostlosina (Taboola)", "Prozenith", "ProstaPrime", "VIGOPROST", "Prosticil"],
+    "articulacoes": ["Biodynamix (2x)", "NutraFlex (2x)", "Congelum Gel", "Artiregen", "Silicio Organico", "Prosaflex"],
+    "adulto": ["Virimax", "Boostaro", "Bull Black", "Bull Flow", "AlphaGummy", "Endurox Prime", "Friday Plans"],
+    "dental": ["Dentabiome", "PurDentix (3 versoes)"],
+    "neuropatia": ["Nervelin", "NerveCalm", "NervCalm", "Pink Salt Trick"]
+  },
+
+  "arquivos_gerados": [
+    {"arquivo": "swipe_produto_fisico.json", "desc": "64 ofertas 'Produto Fisico' do Swipe Offers (Facebook). Sem Guday."},
+    {"arquivo": "swipe_native_nutra.json", "desc": "118 ofertas native (115 nutra + 3 produto fisico). Inclui plataformas identificadas."},
+    {"arquivo": "inteligencia_native_ads.json", "desc": "Este arquivo — resumo completo de toda a inteligencia coletada."}
+  ]
+}

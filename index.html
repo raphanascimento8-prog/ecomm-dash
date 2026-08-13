@@ -112,7 +112,7 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
 <div style="margin-top:8px">
 Ultima atualizacao &middot; 13 ago 2026<br>
 Fontes &middot; Meta Ad Library<br>
-Marcas mapeadas &middot; 37
+Marcas mapeadas &middot; 36
 </div>
 </div>
 </header>
@@ -147,29 +147,28 @@ Metodologia: pesquisa manual no Meta Ad Library para cada marca. Contagem de anu
 
 <script>
 const D=[
-{nome:"Lescent",url:"lescent.com.br",cat:"Perfume",sub:"Inspirados classicos",preco:"R$60-130",ig:"—",conta:"Lescent (6 paginas)",metaAds:2600,escala:"MEGA operacao multi-pagina, maior volume"},
-{nome:"Argennti",url:"argennti.com.br",cat:"Joias",sub:"Prata 925 M/F",preco:"R$80-400",ig:"—",conta:"Argennti + Rafael Ribeiro",metaAds:240,escala:"Influencer whitelabel, desde ago/2025"},
-{nome:"Stucci",url:"stucci.com.br",cat:"Joias",sub:"Prata 925 minimalista",preco:"R$80-300",ig:"220K",conta:"Stucci Prata925",metaAds:160,escala:"Influencer whitelabel, desde jun/2025"},
-{nome:"Minimal Club",url:"minimalclub.com.br",cat:"Moda",sub:"Basicos masculinos",preco:"R$79-249",ig:"572K",conta:"Minimal Club (3 paginas)",metaAds:100,escala:"UGC creators, Copa 2026"},
+{nome:"Lescent",url:"lescent.com.br",cat:"Perfume",sub:"Inspirados classicos",preco:"R$60-130",ig:"—",conta:"Lescent (7 paginas)",metaAds:2600,escala:"MEGA operacao multi-pagina, maior volume",perfis:["Lescent","annaluteixeira com Lescent - Fragrancias","Lescent Fragrances","Lescent Classicos","Lescent Fragrancias","Lescent - Fragrancias","Lescent Luxo Olfativo"]},
+{nome:"Argennti",url:"argennti.com.br",cat:"Joias",sub:"Prata 925 M/F",preco:"R$80-400",ig:"—",conta:"Argennti (3 paginas)",metaAds:220,escala:"Influencer whitelabel, desde ago/2025",perfis:["Argennti","Rafael Ribeiro com Argennti","Guilherme Ramos com Argennti"]},
+{nome:"Stucci",url:"stucci.com.br",cat:"Joias",sub:"Prata 925 minimalista",preco:"R$80-300",ig:"220K",conta:"Stucci Prata925",metaAds:130,escala:"Influencer whitelabel, desde jun/2025"},
 {nome:"ADEL Perfumes",url:"useadel.com.br",cat:"Perfume",sub:"Perfumes alma de importado",preco:"R$50-150",ig:"—",conta:"ADEL Perfumes & Ambient",metaAds:95,escala:"Video-heavy, desde mai/2026"},
 {nome:"Cacife Brand",url:"cacifebrand.com.br",cat:"Oculos",sub:"Oculos + relogios fashion",preco:"R$100-250",ig:"—",conta:"Cacife Brand",metaAds:77,escala:"Ads desde fev/2024 (2.5 anos!)"},
-{nome:"Fiezzo",url:"fiezzo.com",cat:"Moda",sub:"Sapatenis + acessorios vintage",preco:"R$50-200",ig:"—",conta:"Loja Fiezzo / Use Fiezzo",metaAds:72,escala:"Ads desde jul/2024 (2+ anos!)"},
-{nome:"CODE Brincos",url:"codebrincosmasculinos.com.br",cat:"Joias",sub:"Brincos prata 925",preco:"R$50-200",ig:"108K",conta:"CODE Brincos",metaAds:68,escala:"Nicho brinco masculino"},
+{nome:"Fiezzo",url:"fiezzo.com",cat:"Moda",sub:"Sapatenis + acessorios vintage",preco:"R$50-200",ig:"—",conta:"Fiezzo (2 paginas)",metaAds:72,escala:"Ads desde jul/2024 (2+ anos!)",perfis:["Loja Fiezzo","Use Fiezzo"]},
+{nome:"CODE Brincos",url:"codebrincosmasculinos.com.br",cat:"Joias",sub:"Brincos prata 925",preco:"R$50-200",ig:"108K",conta:"CODE Brincos",metaAds:60,escala:"Nicho brinco masculino"},
 {nome:"Golbox",url:"golbox.club",cat:"Camisa Time",sub:"Caixa misteriosa camisas",preco:"R$100-200",ig:"—",conta:"Golbox GBX",metaAds:55,escala:"Influencers (Sosia Vini Jr), 120K+ clientes"},
 {nome:"G Perfumes",url:"gperfumes.com.br",cat:"Perfume",sub:"Contratipos acessiveis",preco:"R$27-80",ig:"270K",conta:"Gperfumes",metaAds:46,escala:"1.2M+ perfumes vendidos"},
 {nome:"Milano Cupertino",url:"milanocupertino.com",cat:"Joias",sub:"Prata 925 artesanal",preco:"R$200-1000+",ig:"—",conta:"Milano Cupertino",metaAds:43,escala:"Cashback 20%, frete gratis >R$400"},
 {nome:"Blox",url:"useblox.com.br",cat:"Oculos",sub:"Oculos de sol fashion",preco:"R$150-350",ig:"336K",conta:"BLOX + BLOX Brazil",metaAds:40,escala:"2 contas, desde set/2024"},
 {nome:"Sinta Paris",url:"sintaparis.com",cat:"Perfume",sub:"Maior catalogo contratipos BR",preco:"R$50-150",ig:"—",conta:"Sinta Paris Perfumes",metaAds:33,escala:"1500 fragancias, desde dez/2025"},
-{nome:"Porto Aroma",url:"portoaroma.com.br",cat:"Perfume",sub:"Inspirados parfum",preco:"R$89-159",ig:"87K",conta:"Porto Aroma + influencers",metaAds:27,escala:"Branded content"},
+{nome:"Porto Aroma",url:"portoaroma.com.br",cat:"Perfume",sub:"Inspirados parfum",preco:"R$89-159",ig:"87K",conta:"Porto Aroma (2 paginas)",metaAds:32,escala:"Branded content",perfis:["Porto Aroma","Homem Cheiroso com Porto Aroma"]},
 {nome:"Loft Masculino",url:"loftmasculino.com.br",cat:"Joias",sub:"Pedras naturais + ouro 18k",preco:"R$100-500",ig:"172K",conta:"Loft Masculino",metaAds:26,escala:"Diamantes naturais, garantia vitalicia"},
 {nome:"Vellario",url:"vellario.com.br",cat:"Joias",sub:"Prata 925 premium",preco:"R$150-600",ig:"—",conta:"Vellario",metaAds:21,escala:"Posicionamento luxo discreto"},
-{nome:"Key Design",url:"keydesign.com.br",cat:"Joias",sub:"Semijoias masculinas",preco:"R$50-300",ig:"324K",conta:"Key Design",metaAds:20,escala:"150K+ clientes, Caio Castro investor"},
-{nome:"Coruja Berloques",url:"corujaberloques.com.br",cat:"Joias",sub:"Berloques prata 925",preco:"R$30-200",ig:"—",conta:"Coruja Berloques",metaAds:20,escala:"Especializada berloques, video+imagem, desde mai/2026"},
-{nome:"Foreli Berloques",url:"foreliberloques.com.br",cat:"Joias",sub:"Berloques compativeis todas pulseiras",preco:"R$30-200",ig:"—",conta:"Foreli Berloques",metaAds:15,escala:"Ads desde nov/2025, frete gratis >R$199, 6x s/ juros"},
-{nome:"Danzi (ex-Dandara)",url:"danzijoias.com.br",cat:"Joias",sub:"Charms, pulseiras prata",preco:"R$50-300",ig:"—",conta:"Danzi",metaAds:17,escala:"Rebrand de Dandara Joias, flash sales"},
-{nome:"Filip Joias",url:"filipjoias.com.br",cat:"Joias",sub:"Semijoias banhadas ouro 18k",preco:"R$50-300",ig:"—",conta:"Filip joias",metaAds:17,escala:"90K+ pedidos"},
+{nome:"Key Design",url:"keydesign.com.br",cat:"Joias",sub:"Semijoias masculinas",preco:"R$50-300",ig:"324K",conta:"Key Design",metaAds:31,escala:"150K+ clientes, Caio Castro investor"},
+{nome:"Coruja Berloques",url:"corujaberloques.com.br",cat:"Joias",sub:"Berloques prata 925",preco:"R$30-200",ig:"—",conta:"CorujaOutlet",metaAds:11,escala:"Especializada berloques, video+imagem, desde mai/2026"},
+{nome:"Foreli Berloques",url:"foreliberloques.com.br",cat:"Joias",sub:"Berloques compativeis todas pulseiras",preco:"R$30-200",ig:"—",conta:"Foreli Berloques",metaAds:25,escala:"Ads desde mai/2026, frete gratis >R$199, 6x s/ juros"},
+{nome:"Danzi (ex-Dandara)",url:"danzijoias.com.br",cat:"Joias",sub:"Charms, pulseiras prata",preco:"R$50-300",ig:"—",conta:"Danzi",metaAds:24,escala:"Rebrand de Dandara Joias, flash sales"},
+{nome:"Filip Joias",url:"filipjoias.com.br",cat:"Joias",sub:"Semijoias banhadas ouro 18k",preco:"R$50-300",ig:"—",conta:"Filip joias",metaAds:8,escala:"90K+ pedidos"},
 {nome:"Futebolistas",url:"futebolistas.com.br",cat:"Camisa Time",sub:"Camisas retro + atuais",preco:"R$150-300",ig:"—",conta:"Futebolistas",metaAds:17,escala:"Pague 2 Leve 3, app proprio"},
-{nome:"Ethos Loja",url:"ethosloja.com.br",cat:"Oculos",sub:"Oculos esportivos",preco:"R$100-300",ig:"—",conta:"Loja Ethos + Ethos.Of",metaAds:15,escala:"2 paginas, video-heavy"},
+{nome:"Ethos Loja",url:"ethosloja.com.br",cat:"Oculos",sub:"Oculos esportivos",preco:"R$100-300",ig:"—",conta:"Ethos.Of",metaAds:95,escala:"Video-heavy, desde abr/2025"},
 {nome:"Innovare Sneakers",url:"innovaresneakers.com",cat:"Tenis",sub:"Tenis importados",preco:"R$200-800",ig:"92K",conta:"Innovare sneakers brasil",metaAds:8,escala:"New Balance 9060"},
 {nome:"Rei das Pratas",url:"reipratas.com.br",cat:"Joias",sub:"Correntes, pulseiras prata",preco:"R$60-400",ig:"85K",conta:"Rei Pratas",metaAds:7,escala:"85K IG, Shopify"},
 {nome:"Espaco Tenis",url:"espacotenis.com.br",cat:"Tenis",sub:"Sneakers importados",preco:"R$150-600",ig:"117K",conta:"Espaco Tenis",metaAds:7,escala:"Converse, Puma, Nike, Adidas, 20-30% off"},
@@ -244,6 +243,7 @@ igD+
 '<div style="display:flex;flex-wrap:wrap;gap:7px">'+
 (r.url&&r.url!=='—'?'<a class="lnk" href="https://'+r.url+'" target="_blank">&#9672; Abrir loja</a>':'')+
 (r.metaAds>0?'<a class="lnk" href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&q='+encodeURIComponent(r.url)+'" target="_blank">&#9654; Anuncios</a>':'')+
+(r.perfis?r.perfis.map(function(p,i){return '<a class="lnk" href="https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=BR&q='+encodeURIComponent(p)+'" target="_blank" style="color:var(--accent)">Perfil '+(i+1)+'</a>';}).join(''):'')+
 '</div>'+
 '</div>';
 }).join('');

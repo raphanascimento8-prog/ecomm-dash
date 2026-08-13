@@ -1,0 +1,10 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "detetive",
+      "port": 8790,
+      "url": "http://127.0.0.1:8790"
+    }
+  ]
+}

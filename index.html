@@ -78,6 +78,7 @@ header p{color:var(--muted);margin:6px 0 0;font-size:14px;max-width:60ch}
 .pill.cat-tenis{color:var(--bad);background:rgba(192,138,128,.1)}
 .pill.cat-gadgets{color:var(--faint);background:var(--surface2)}
 .pill.cat-caixa{color:#e09850;background:rgba(224,152,80,.1)}
+.pill.cat-luxo{color:#d4af37;background:rgba(212,175,55,.1)}
 .pill.meta-p{color:var(--muted);background:var(--surface2);border-color:var(--border)}
 .pill.heat{color:var(--accent);background:var(--accent-soft);font-family:var(--mono)}
 .pill.ig-p{color:#b08af0;background:rgba(176,138,240,.08)}
@@ -111,9 +112,9 @@ footer{margin-top:34px;border-top:1px solid var(--border);padding-top:18px;color
 <button data-t="light" onclick="setTheme('light')">Claro</button>
 </div>
 <div style="margin-top:8px">
-Ultima atualizacao &middot; 13 ago 2026<br>
+Ultima atualizacao &middot; 14 ago 2026<br>
 Fontes &middot; Meta Ad Library<br>
-Marcas mapeadas &middot; 36
+Marcas mapeadas &middot; 37
 </div>
 </div>
 </header>
@@ -133,6 +134,7 @@ Marcas mapeadas &middot; 36
 <button class="chip" data-f="Moda" onclick="fil('Moda',this)">Moda <span class="cn" id="cModa"></span></button>
 <button class="chip" data-f="Tenis" onclick="fil('Tenis',this)">Tenis <span class="cn" id="cTenis"></span></button>
 <button class="chip" data-f="Caixa Misteriosa" onclick="fil('Caixa Misteriosa',this)">Caixa Misteriosa <span class="cn" id="cCaixa"></span></button>
+<button class="chip" data-f="Luxo" onclick="fil('Luxo',this)">Luxo <span class="cn" id="cLuxo"></span></button>
 </div>
 </div>
 <div class="search-wrap">
@@ -184,11 +186,12 @@ const D=[
 {nome:"Loja do Capita",url:"lojadocapita.com.br",cat:"Camisa Time",sub:"Camisas de time",preco:"R$79-200",ig:"—",conta:"Loja do Capita",metaAds:0,escala:"Presenca TikTok, 0 ads Meta"},
 {nome:"Basico.com",url:"basico.com",cat:"Moda",sub:"Essentials / camisetas",preco:"R$69-199",ig:"—",conta:"basico.com",metaAds:0,escala:"Desde 2013, pioneiro DTC, 283K FB"},
 {nome:"DUEROS",url:"dueros.com.br",cat:"Joias",sub:"Prata 925 + ouro 18k handmade",preco:"R$100-500",ig:"—",conta:"—",metaAds:0,escala:"Artesanal premium, 0 ads ativos"},
-{nome:"BePro",url:"usebepro.com.br",cat:"Gadgets",sub:"Capas e peliculas iPhone",preco:"R$30-120",ig:"—",conta:"BePro",metaAds:0,escala:"25K FB likes, 0 ads ativos"}
+{nome:"BePro",url:"usebepro.com.br",cat:"Gadgets",sub:"Capas e peliculas iPhone",preco:"R$30-120",ig:"—",conta:"BePro",metaAds:0,escala:"25K FB likes, 0 ads ativos"},
+{nome:"CavoWear",url:"cavowear.com",cat:"Luxo",sub:"Replicas Goyard, LV, carteiras e bolsas",preco:"€15-80",ig:"—",conta:"CavoWear",metaAds:2,escala:"Shopify, eslovaco, varias versoes por ad, usa nome original das marcas, desde jul/2026"}
 ];
 
-const CATCLS={Joias:'cat-joias',Oculos:'cat-oculos',Perfume:'cat-perfume','Camisa Time':'cat-camisa',Moda:'cat-moda',Tenis:'cat-tenis',Gadgets:'cat-gadgets','Caixa Misteriosa':'cat-caixa'};
-const CATBOR={Joias:'#8ab4f0',Oculos:'#80c4bc',Perfume:'#b08af0','Camisa Time':'#9dbba6',Moda:'#c0a878',Tenis:'#c08a80',Gadgets:'#6c6c72','Caixa Misteriosa':'#e09850'};
+const CATCLS={Joias:'cat-joias',Oculos:'cat-oculos',Perfume:'cat-perfume','Camisa Time':'cat-camisa',Moda:'cat-moda',Tenis:'cat-tenis',Gadgets:'cat-gadgets','Caixa Misteriosa':'cat-caixa',Luxo:'cat-luxo'};
+const CATBOR={Joias:'#8ab4f0',Oculos:'#80c4bc',Perfume:'#b08af0','Camisa Time':'#9dbba6',Moda:'#c0a878',Tenis:'#c08a80',Gadgets:'#6c6c72','Caixa Misteriosa':'#e09850',Luxo:'#d4af37'};
 
 function igNum(s){if(!s||s==='—')return 0;var m=s.match(/([\d.]+)\s*(M|K)?/i);if(!m)return 0;var n=parseFloat(m[1]);if(m[2]==='M')n*=1e6;else if(m[2]==='K')n*=1e3;return n;}
 D.forEach(function(d){d.ig_n=igNum(d.ig);});
@@ -205,9 +208,9 @@ document.getElementById('kpis').innerHTML=
 
 document.getElementById('cAll').textContent=D.length;
 var catCounts={};D.forEach(function(d){catCounts[d.cat]=(catCounts[d.cat]||0)+1;});
-['Joias','Oculos','Perfume','Camisa','Moda','Tenis','Caixa'].forEach(function(c){
+['Joias','Oculos','Perfume','Camisa','Moda','Tenis','Caixa','Luxo'].forEach(function(c){
 var el=document.getElementById('c'+c);
-if(el){var key=c==='Camisa'?'Camisa Time':c==='Caixa'?'Caixa Misteriosa':c;el.textContent=catCounts[key]||0;}
+if(el){var key=c==='Camisa'?'Camisa Time':c==='Caixa'?'Caixa Misteriosa':c;if(el)el.textContent=catCounts[key]||0;}
 });
 
 var curCat=null;
